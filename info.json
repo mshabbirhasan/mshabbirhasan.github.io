@@ -1,0 +1,47 @@
+{
+  "first": "Mohammad Shabbir",
+  "last": "Hasan",
+  "pid": "shabbir5",
+  "country": "Bangladesh",
+  "gender": "Male",
+  "advisor": "Liqing Zhang",
+  "bio": "Interested to be a research oriented academician. My research interest includes Bioinformatics, Computational Biology and Evolutionary Genomics.",
+  "degree": "PhD",
+  "started": "Fall 2013",
+  "graduation": "Summer 2017",
+  "skills": [
+    {
+      "skill": "Java"
+    },
+    {
+      "skill": "C"
+    },
+    {
+      "skill": "C++"
+    },
+    {
+      "skill": "LaTeX"
+    },
+    {
+      "skill": "MySQL"
+    },
+    {
+      "skill": "PHP"
+    },
+    {
+      "skill": "html"
+    }
+  ],
+  "interests": [
+    {
+      "interest": "bioinformatics"
+    },
+    {
+      "interest": "computational biology"
+    }
+  ],
+  "desk": "2160T TORG",
+  "image": "http://people.cs.vt.edu/~shabbir5/images/shabbir.jpg",
+  "thesis_title": "Calling InDels from Short Reads",
+  "website": "http://www.shabbirhasan.com"
+}

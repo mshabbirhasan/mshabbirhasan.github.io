@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<link rel="icon" type="image/png" href="images/favIcon.png">		
+		<title>Mohammad Shabbir Hasan</title>
+		<meta name='description' content='Mohammad Shabbir Hasan' />
+		<meta name='keywords' content='Mohammad Shabbir Hasan, mohammad shabbir hasan, Sabbir Hasan, sabbir hasan, Shabbir Hasan, shabbir hasan, Mohammad Sabbir Hasan, mohammad sabbir hasan, Md. Shabbir Hasan, md. shabbir hasan, Md. Sabbir Hasan, md. sabbir hasan, Md Shabbir Hasan, md shabbir hasan, Md Sabbir Hasan, md sabbir hasan' />
+		<meta property='site_name' content='Mohammad Shabbir Hasan' />
+		<meta property='title' content='Mohammad Shabbir Hasan' />
+		<meta property='description' content='Mohammad Shabbir Hasan' />
+		<meta property='image' content='http://www.shabbirhasan.com/images/shabbir.jpg' />
+		<meta property='url' content='http://www.shabbirhasan.com/' />		
+
+		<link rel="stylesheet" href="css/style.css" type="text/css" /> 			 	
+	    <style type="text/css">
+<!--
+.style1 {font-weight: bold}
+-->
+        </style>
+		
+		<!-- Add jQuery library -->
+		<script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+	
+		<!-- Add mousewheel plugin (this is optional) -->
+		<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	
+		<!-- Add fancyBox main JS and CSS files -->
+		<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+		<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+	
+		<!-- Add Button helper (this is optional) -->
+		<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+		<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	
+		<!-- Add Thumbnail helper (this is optional) -->
+		<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+		<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	
+		<!-- Add Media helper (this is optional) -->
+		<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				 *  Simple image gallery. Uses default settings
+				 */
+	
+				$('.fancybox').fancybox();
+	
+				/*
+				 *  Different effects
+				 */
+	
+				// Change title type, overlay closing speed
+				$(".fancybox-effects-a").fancybox({
+					helpers: {
+						title : {
+							type : 'outside'
+						},
+						overlay : {
+							speedOut : 0
+						}
+					}
+				});
+	
+				// Disable opening and closing animations, change title type
+				$(".fancybox-effects-b").fancybox({
+					openEffect  : 'none',
+					closeEffect	: 'none',
+	
+					helpers : {
+						title : {
+							type : 'over'
+						}
+					}
+				});
+	
+				// Set custom style, close if clicked, change title type and overlay color
+				$(".fancybox-effects-c").fancybox({
+					wrapCSS    : 'fancybox-custom',
+					closeClick : true,
+	
+					openEffect : 'none',
+	
+					helpers : {
+						title : {
+							type : 'inside'
+						},
+						overlay : {
+							css : {
+								'background' : 'rgba(238,238,238,0.85)'
+							}
+						}
+					}
+				});
+	
+				// Remove padding, set opening and closing animations, close if clicked and disable overlay
+				$(".fancybox-effects-d").fancybox({
+					padding: 0,
+	
+					openEffect : 'elastic',
+					openSpeed  : 150,
+	
+					closeEffect : 'elastic',
+					closeSpeed  : 150,
+	
+					closeClick : true,
+	
+					helpers : {
+						overlay : null
+					}
+				});
+	
+				/*
+				 *  Button helper. Disable animations, hide close button, change title type and content
+				 */
+	
+				$('.fancybox-buttons').fancybox({
+					openEffect  : 'none',
+					closeEffect : 'none',
+	
+					prevEffect : 'none',
+					nextEffect : 'none',
+	
+					closeBtn  : false,
+	
+					helpers : {
+						title : {
+							type : 'inside'
+						},
+						buttons	: {}
+					},
+	
+					afterLoad : function() {
+						this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+					}
+				});
+	
+	
+				/*
+				 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+				 */
+	
+				$('.fancybox-thumbs').fancybox({
+					prevEffect : 'none',
+					nextEffect : 'none',
+	
+					closeBtn  : false,
+					arrows    : false,
+					nextClick : true,
+	
+					helpers : {
+						thumbs : {
+							width  : 50,
+							height : 50
+						}
+					}
+				});
+	
+				/*
+				 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+				*/
+				$('.fancybox-media')
+					.attr('rel', 'media-gallery')
+					.fancybox({
+						openEffect : 'none',
+						closeEffect : 'none',
+						prevEffect : 'none',
+						nextEffect : 'none',
+	
+						arrows : false,
+						helpers : {
+							media : {},
+							buttons : {}
+						}
+					});
+	
+				/*
+				 *  Open manually
+				 */
+	
+				$("#fancybox-manual-a").click(function() {
+					$.fancybox.open('1_b.jpg');
+				});
+	
+				$("#fancybox-manual-b").click(function() {
+					$.fancybox.open({
+						href : 'iframe.html',
+						type : 'iframe',
+						padding : 5
+					});
+				});
+	
+				$("#fancybox-manual-c").click(function() {
+					$.fancybox.open([
+						{
+							href : '1_b.jpg',
+							title : 'My title'
+						}, {
+							href : '2_b.jpg',
+							title : '2nd title'
+						}, {
+							href : '3_b.jpg'
+						}
+					], {
+						helpers : {
+							thumbs : {
+								width: 75,
+								height: 50
+							}
+						}
+					});
+				});
+	
+	
+			});
+		</script>
+		
+		<style type="text/css">
+			.fancybox-custom .fancybox-skin {
+				box-shadow: 0 0 50px #222;
+			}		
+		</style>		
+</head>
+	
+	<body>
+		<table align="center">
+			<tr>
+				<td colspan="2" bgcolor="#003366" style="padding:7px 7px 7px 7px;">
+					<h1>Mohammad Shabbir Hasan</h1><hr /><h3>Ph.D. Student, <a target="_blank" href="http://www.cs.vt.edu" style="color:#FFFFFF";>Computer Science</a>, <a target="_blank" href="http://www.vt.edu" style="color:#FFFFFF";>Virgina Tech</a></h3>
+				</td>				
+			</tr>
+			<tr>
+				<td width="180" valign="top" bgcolor="#D8DFEA">
+					<div class="style1" id="pageNavigator">
+						<div id="menuLinks">
+							<a href="index.html">Home</a>
+							<a href="education.html">Education</a>
+							<a href="research.html">Research</a>
+							<a href="projects.html">Projects</a>							
+							<a href="publications.html">Publications</a>
+							<a href="work_experience.html">Work Experience</a>
+							<a href="curriculum_vitae.html">Curriculum  Vitae</a>
+							<a href="whats_new.html">What's New!!</a>
+							<a href="personal.html">Personal Information</a>
+							<a href="contact.html">Contact</a>						</div>
+					</div>				
+			  	</td>
+				<td width="666" valign="top" bgcolor="#FFFFFF">
+				  <div style="border:1px dashed #bbb; padding:5px 5px 5px 5px;">
+						<div id="headline">Projects</div><br />
+						<p align="justify" style="padding:10px 10px 0px 0px;"><strong>UPS-indel</strong></p>
+						<p align="justify">Indels, though differing in allele sequence and position, are biologically equivalent when they lead to the same altered sequences. Storing biologically equivalent indels as distinct entries in databases causes data redundancy, and may mislead downstream analysis and interpretations. About 10% of the human indels stored in dbSNP are redundant. It is thus desirable to have a unified system for identifying and representing equivalent indels in publically available databases. This paper describes UPS-indel, a utility tool that creates a universal positioning system for indels so that equivalent indels can be uniquely determined by their coordinates in the new system. UPS-indel identifies nearly 15% indels in dbSNP (version 142) as redundant across all human chromosomes, higher than previously reported. When applied to COSMIC coding and noncoding indel datasets, UPS-indel identifies nearly 29% and 13% indels as redundant, respectively. Comparing the performance of UPS-indel with existing variant normalization tools vt normalize, BCFtools, and GATK LeftAlignAndTrimVariants shows that UPS-indel is able to identify 456,352 more redundant indels in dbSNP, 2,118 more in COSMIC coding, and 553 more in COSMIC noncoding indel dataset in addition to the ones reported jointly by these tools. UPS-indel is theoretically proven to find all equivalent indels, and is thus exhaustive. UPS-indel is written in C++ and is freely available <a href="https://github.com/shabbir005/ups-indel" target="_blank">here</a>.</p>
+						<p style="padding:0px 10px 10px 0px;"><a href="https://github.com/shabbir005/ups-indel" target="_blank">[Project Page]</a> <a href="https://www.nature.com/articles/s41598-017-14400-1" target="_blank">[Paper]</a></p>
+
+						<p align="justify"><strong>Assessment of indel calling tools using real short-read data</strong></p>
+						<p align="justify">Insertion and deletion (indel), a common form of genetic variation, has been shown to cause or contribute to human genetic diseases and cancer. With the advance of Next Generation Sequencing technology, many indel calling tools have been developed; however, evaluation and comparison of these tools using large-scale real data are still scant. Here we evaluated seven popular and publicly available indel calling tools, GATK Unified Genotyper, VarScan, Pindel, SAMtools, Dindel, GTAK HaplotypeCaller, and Platypus, using 78 human genome low coverage datafrom the 1000 Genomes project. Comparing indels called by these tools with a known set of indels, we found that Platypus outperforms other tools. In addition, a high percentage of known indels still remain undetected and the number of common indels called by all seven tools is very low. All these findings indicate the necessity of improving the existing tools or developing new algorithms to achieve reliable and consistent indel calling results.</p>
+						<p style="padding:0px 10px 10px 0px;"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4545535/?tool=myncbi" target="_blank">[Paper]</a></p>
+
+						<p align="justify"><strong>SPAI: Single Platform for Analyzing Indel</strong></p>
+						<p align="justify">SPAI which stand for Single Platform for Analyzing Indels is a workbench which is intended to aid in the research on indel calling. Unlike other existing command line tools which needs expertise from Computer Science (CS) to run them, we emphasis here to create an environment where users from non-CS background can run the existing indel calling tools using a Graphical User Interface (GUI). In addition to that, this interactive tool written in Java also provide several features that include downloading alignment files (BAM files) from the 1000 Genomes project, viewing the alignment files and variant files in a tabular format, cross-validation among the indel calling results from different tools, comparing the results from different indel calling tools with the benchmark dataset, and graphically visualizing the comparison results.</p>
+						<p style="padding:0px 10px 10px 0px;"><a href="files/papers/spai.pdf" target="_blank">[Paper 1]</a> <a href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-2824-x" target="_blank">[Paper 2]</a></p>
+
+						<p align="justify"><strong>P-Dindel</strong></p>
+						<a class="fancybox-effects-b" href="images/p-dindel_pooled.jpg" title="Comparison between dindel and p-dindel for pooled samples."><img src="images/p-dindel_pooled_small.jpg" align="right" hspace="0" vspace="5"  alt="Comparison between dindel and p-dindel for pooled samples." style="padding:0px 0px 0px 10px;"></a>
+						<a class="fancybox-effects-b" href="images/p-dindel_diploid.jpg" title="Comparison between dindel and p-dindel for diploid samples."><img src="images/p-dindel_diploid_small.jpg" align="right" hspace="0" vspace="5"  alt="Comparison between dindel and p-dindel for diploid samples." style="padding:0px 0px 0px 10px;"></a>
+						<p align="justify">Insertion and deletion (indel) of DNA bases is the second most common forms of genetic variation in human genomes and is linked to various genetic diseases and cancers. With next generation sequencing technology, indels are identified through short read sequence alignment and subsequent indel calling. The open source indel calling program Dindel has relatively high sensitivity yet prohibitive running time. To accelerate indel calling of Dindel, we introduce P-Dindel, a multi-core multi-thread based implementation of Dindel. Results show that the proposed algorithm achieves 4X speed up for both diploid samples and pooled samples compared to Dindel, while producing the same result as Dindel.</p>
+						<p style="padding:0px 10px 10px 0px;"><a href="https://github.com/zhanglabvt/P-Dindel" target="_blank">[Project Page]</a> <a href="files/papers/P-Dindel.pdf" target="_blank">[Paper]</a></p>																	
+						<p align="justify"><strong>Investigating gene relationships in microarray expression </strong></p>
+						<a class="fancybox-effects-b" href="images/GO_cluster1_KRAS.jpg" title="GO graph for KRAS positive tissues."><img src="images/GO_cluster1_KRAS_small.jpg" align="right" hspace="0" vspace="5"  alt="GO graph for KRAS positive tissues." style="padding:0px 0px 0px 10px;"></a>
+						<a class="fancybox-effects-b" href="images/GO_cluster1_normal.jpg" title="GO graph for normal tissues."><img src="images/GO_cluster1_normal_small.jpg" align="right" hspace="0" vspace="5"  alt="GO graph for normal tissues." style="padding:0px 0px 0px 10px;"></a>						
+						<p align="justify">The aim of the study is to group biologically relevant genes by using gene clustering. For gene clustering, we developed a combined algorithm using k-means clustering and hierarchical clustering. Here we used k-means clustering algorithm where the initial number of clusters is decided from the output of hierarchical clustering. This approach overcomes the limitation of both k-means clustering and hierarchical clustering algorithms. Using 40 samples (20 normal tissues and 20 KRAS positive tissues) and 464 genes from the dataset of Adenocarcinoma which is the most frequent type of non-small-cell lung cancers, and after applying the combined clustering algorithms we obtained 4 clusters for both normal tissue dataset and KRAS positive dataset. Moreover, we examined the genes contained in each cluster with respect to their molecular functions based on Gene Ontology (GO) annotation to see what are the changes in the enrichment of the molecular functions of the genes took place from normal tissues to KRAS positive tissues. 
+The k-means clustering algorithm combined with hierarchical clustering takes the advantage of hierarchical clustering to get a complete hierarchy of clusters and using this information it decides the initial number of clusters to be used in k-means clustering which produces a tighter cluster than hierarchical clustering. This way it overcomes the limitation of k-means clustering.</p>
+						<p align="justify"><span style="padding:0px 10px 10px 0px;"><a href="files/papers/book_chapter.pdf" target="_blank">[Book Chapter]</a></span><span style="padding:0px 10px 10px 0px;"><a href="files/papers/biocomp_2014.pdf" target="_blank">[Paper]</a></span></p>
+						<p align="justify"><strong>EGID: an ensemble algorithm for improved genomic island detection in genomic sequences</strong></p>
+						<a class="fancybox-effects-b" href="images/egid.jpg" title="Circular representations of the Escherichia coli O157:H7 str. Sakai (NC_002695) showing predicted GIs, with each circle predicted by each program. The predicted GIs from the outer to the inner circle are EGID, AlienHunter, COLOMBO SIGI-HMM, INDeGenIUS, Island-Path, and PAI-IDA. The shaded parts show the predicted GIs by EGID, and evidenced GIs by other programs."><img src="images/egid_small.jpg" align="right" hspace="0" vspace="5"  alt="Circular representations of the Escherichia coli O157:H7 str. Sakai (NC_002695) showing predicted GIs, with each circle predicted by each program. The predicted GIs from the outer to the inner circle are EGID, AlienHunter, COLOMBO SIGI-HMM, INDeGenIUS, Island-Path, and PAI-IDA. The shaded parts show the predicted GIs by EGID, and evidenced GIs by other programs." style="padding:0px 0px 0px 10px;"></a>
+						<p align="justify">Genomic islands (GIs) are genomic regions that are originally transferred from other organisms. The detection of genomic islands in genomes can lead to many applications in industrial, medical and environmental contexts. Existing computational tools for GI detection suffer either low recall or low precision, thus leaving the room for improvement. We developed a tool called EGID which stands for &quot;Ensemble algorithm for Genomic Island Detection&quot;. EGID utilizes the prediction results of existing computational tools, filters and generates consensus prediction results. Performance comparisons between our ensemble algorithm and existing programs have shown that this ensemble algorithm perform 12.14% better than the previously known best program. <a href="http://www5.esu.edu/cpsc/bioinfo/software/EGID/" target="_blank">[Project Page]</a> <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3280502/" target="_blank">[Paper 1]</a> <a href="files/papers/egid_paper_2.pdf" target="_blank">[Paper 2]</a></p>
+						<p align="justify"><strong>GIST: Genomic Isiland Suite of Tools for predicting genomic islands</strong></p>
+						<a class="fancybox-effects-b" href="images/gist_download_window.jpg" title="GIST download window."><img src="images/gist_download_window_small.jpg" align="right" hspace="0" vspace="5"  alt="GIST download window." style="padding:0px 0px 0px 10px;"></a>
+						<a class="fancybox-effects-b" href="images/gist_main_window.jpg" title="GIST main window."><img src="images/gist_main_window_small.jpg" align="right" hspace="0" vspace="5"  alt="GIST main window." style="padding:0px 0px 0px 10px;"></a>						
+						<p align="justify">Genomic Islands (GIs) are genomic regions that are originally from other organisms, through a process known as Horizontal Gene Transfer (HGT). Detection of GIs plays a significant role in biomedical research since such align genomic regions usually contain important features, such as pathogenic genes. We have developed a use friendly graphic user interface, Genomic Island Suite of Tools (GIST), which is a platform for scientific users to predict GIs. This software package includes five commonly used tools, AlienHunter, IslandPath, Colombo SIGI-HMM, INDeGenIUS and Pai-Ida. It also includes an optimization program EGID that ensembles the result of existing tools for more accurate prediction. The tools in GIST can be used either separately or sequentially. GIST also includes a downloadable feature that facilitates collecting the input genomes automatically from the FTP server of the National Center for Biotechnology Information (NCBI).  <a href="http://www5.esu.edu/cpsc/bioinfo/software/GIST/" target="_blank">[Project Page]</a> <span style="padding:0px 10px 10px 0px;"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3302003/" target="_blank">[Paper]</a></span></p>
+				  </div>
+				</td>
+			</tr>
+		  	<tr>
+		  		<td colspan="2" bgcolor="#003366" style="padding:7px 7px 7px 7px;" align="right">
+					<div id="footerLinks">
+						<a href="index.html">Home | </a>
+						<a href="education.html">Education | </a>
+						<a href="research.html">Research | </a>
+						<a href="projects.html">Projects | </a>						
+						<a href="publications.html">Publications | </a>
+						<a href="work_experience.html">Work Experience | </a>
+						<a href="curriculum_vitae.html">Curriculum  Vitae | </a>
+						<a href="whats_new.html">What's New!! | </a>
+						<a href="personal.html">Personal Information | </a>					
+						<a href="contact.html">Contact</a>					</div>
+				</td>
+		  	</tr>
+		  	<tr>
+				<td height="25" colspan="2" bgcolor="#003366" style="padding:7px 7px 7px 7px;">
+					<p>	
+						<h3 align="center">Copyright &copy; 2011-
+						  <script language="javascript" type="text/javascript"> document.write(new Date().getFullYear()) </script> Mohammad Shabbir Hasan. All rights reserved.</h3>
+					</p>				
+				</td>
+		  	</tr>
+		</table>
+	</body>
+</html>
